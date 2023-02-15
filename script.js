@@ -49,17 +49,15 @@ function isIsogram(str) {
 //   return new Set(str.toUpperCase()).size == str.length;
 // }
 
-console.log(isIsogram("shayan"));
-
 // ---------------------------------------------------------
 
-array.diff = arrayDiff([1, 2], [1]) == [2];
+// array.diff = arrayDiff([1, 2], [1]) == [2];
 function arrayDiff(a, b) {
   const result = a.filter((n) => !b.includes(n));
   return result;
 }
 
-console.log(arrayDiff([1, 2], [2]));
+// console.log(arrayDiff([1, 2], [2]));
 // another way
 // function array_diff(a, b) {
 //   b = new Set(b);
@@ -81,7 +79,7 @@ function descendingOrder(n) {
   return sortNums.join("");
 }
 
-console.log(descendingOrder(124364375755413));
+// console.log(descendingOrder(124364375755413));
 
 // next solution
 function descendingOrder(n) {
@@ -318,4 +316,29 @@ function sumArray(num) {
 }
 
 // ------------------------------------------------------------------------
-// test
+// First non-repeating character
+
+function firstNonRepeatingLetter(str) {
+  let array = str.split("");
+  let map = array.map((e) => e.toLowerCase());
+
+  let reduce = map.reduce(function (prev, cur) {
+    prev[cur] = (prev[cur] || 0) + 1;
+    return prev;
+  }, {});
+
+  let finalIndex = null;
+  for (const [key, value] of Object.entries(reduce)) {
+    if (value === 1) {
+      let indexOfunique = map.indexOf(key);
+      finalIndex =
+        finalIndex !== null && finalIndex < indexOfunique
+          ? finalIndex
+          : indexOfunique;
+    }
+  }
+
+  return finalIndex === null ? "" : array[finalIndex];
+}
+
+console.log(firstNonRepeatingLetter("aaBcc"));
