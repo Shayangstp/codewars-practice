@@ -348,17 +348,63 @@
 
 // String will never be empty and you do not need to account for different data types.
 
-function findShort(s) {
-  const array = s.split(" ");
-  var result = Math.min.apply(
-    Math,
-    array.map((str) => str.length)
-  );
+// function findShort(s) {
+//   const array = s.split(" ");
+//   var result = Math.min.apply(
+//     Math,
+//     array.map((str) => str.length)
+//   );
 
-  
-  return result;
-}
-
-
+//   return result;
+// }
 
 //----------------------------------------------------------------------
+
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+function pigIt(str) {
+  const punch = str
+    .match(/[^a-zA-Z]/g)
+    .join("")
+    .trim();
+
+  console.log(punch);
+  const textArray = str.split(" ");
+
+  let final = "";
+
+  textArray.forEach((e) => {
+    let punch = e.replace(/[^a-zA-Z]/g, "");
+    console.log(punch);
+    let result = "";
+    let ayEl = "ay";
+
+    if (punch !== "") {
+      let a = punch.split("");
+      // console.log(a);
+      const shiftedEl = a.shift();
+      const elToEnd = a.push(shiftedEl + ayEl).toString();
+      const string = a.join("");
+
+      result += string;
+
+      final += " " + result;
+    }
+  });
+  if (punch !== "") {
+    return final.trim() + " " + punch;
+  } else {
+    return final.trim();
+  }
+}
+
+function pigIt(str) {
+  return str
+    .split(" ")
+    .map((word) =>
+      word.match(/[a-z]/i) ? word.slice(1) + word.charAt(0) + "ay" : word
+    )
+    .join(" ");
+}
+
+const pigIt = (s) => s.replace(/(\w)(\w*)/g, "$2$1ay");
