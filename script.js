@@ -362,49 +362,60 @@
 
 // Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
 
-function pigIt(str) {
-  const punch = str
-    .match(/[^a-zA-Z]/g)
-    .join("")
-    .trim();
+// function pigIt(str) {
+//   const punch = str
+//     .match(/[^a-zA-Z]/g)
+//     .join("")
+//     .trim();
 
-  console.log(punch);
-  const textArray = str.split(" ");
+//   console.log(punch);
+//   const textArray = str.split(" ");
 
-  let final = "";
+//   let final = "";
 
-  textArray.forEach((e) => {
-    let punch = e.replace(/[^a-zA-Z]/g, "");
-    console.log(punch);
-    let result = "";
-    let ayEl = "ay";
+//   textArray.forEach((e) => {
+//     let punch = e.replace(/[^a-zA-Z]/g, "");
+//     console.log(punch);
+//     let result = "";
+//     let ayEl = "ay";
 
-    if (punch !== "") {
-      let a = punch.split("");
-      // console.log(a);
-      const shiftedEl = a.shift();
-      const elToEnd = a.push(shiftedEl + ayEl).toString();
-      const string = a.join("");
+//     if (punch !== "") {
+//       let a = punch.split("");
+//       // console.log(a);
+//       const shiftedEl = a.shift();
+//       const elToEnd = a.push(shiftedEl + ayEl).toString();
+//       const string = a.join("");
 
-      result += string;
+//       result += string;
 
-      final += " " + result;
-    }
-  });
-  if (punch !== "") {
-    return final.trim() + " " + punch;
-  } else {
-    return final.trim();
-  }
+//       final += " " + result;
+//     }
+//   });
+//   if (punch !== "") {
+//     return final.trim() + " " + punch;
+//   } else {
+//     return final.trim();
+//   }
+// }
+
+// function pigIt(str) {
+//   return str
+//     .split(" ")
+//     .map((word) =>
+//       word.match(/[a-z]/i) ? word.slice(1) + word.charAt(0) + "ay" : word
+//     )
+//     .join(" ");
+// }
+
+// const pigIt = (s) => s.replace(/(\w)(\w*)/g, "$2$1ay");
+
+// ------------------------------------------------------------------------------
+// The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
+
+// To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+
+function openOrSenior(data) {
+  return data.map(([age, handicap]) =>
+    age > 54 && handicap > 7 ? "Senior" : "Open"
+  );
 }
-
-function pigIt(str) {
-  return str
-    .split(" ")
-    .map((word) =>
-      word.match(/[a-z]/i) ? word.slice(1) + word.charAt(0) + "ay" : word
-    )
-    .join(" ");
-}
-
-const pigIt = (s) => s.replace(/(\w)(\w*)/g, "$2$1ay");
