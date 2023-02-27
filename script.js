@@ -423,29 +423,50 @@ function openOrSenior(data) {
 //---------------------------------------------------------------------
 // This time no story, no theory. The examples below show you how to write function accum:
 
-function accum(s) {
-  const split = s.toLowerCase().split("");
+// function accum(s) {
+//   const split = s.toLowerCase().split("");
 
-  let array = [];
+//   let array = [];
 
-  split.forEach((item, idx) => {
-    const repeat = item.repeat(idx).toString();
+//   split.forEach((item, idx) => {
+//     const repeat = item.repeat(idx).toString();
 
-    const firstIdx = item.charAt(0).toUpperCase();
+//     const firstIdx = item.charAt(0).toUpperCase();
 
-    const result = firstIdx + repeat;
+//     const result = firstIdx + repeat;
 
-    array.push(result);
-  });
+//     array.push(result);
+//   });
 
-  return array.join("-");
-}
+//   return array.join("-");
+// }
 
-function accum(s) {
-  return s
-    .split("")
-    .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
-    .join("-");
-}
+//-
+
+// function accum(s) {
+//   return s
+//     .split("")
+//     .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
+//     .join("-");
+// }
+
+// -----------------------------------------------------------------------In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+// function highAndLow(numbers) {
+//   const nums = numbers.split(" ").sort((a, b) => a - b);
+
+//   const HighToLow = nums[nums.length - 1] + " " + nums[0];
+
+//   return HighToLow.toString();
+// }
+
+// //-
+
+// function highAndLow(numbers) {
+//   numbers = numbers.split(" ").map(Number);
+//   return Math.max.apply(0, numbers) + " " + Math.min.apply(0, numbers);
+// }
+
+// ----------------------------------------------------------------------
 
 
