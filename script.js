@@ -419,3 +419,33 @@ function openOrSenior(data) {
     age > 54 && handicap > 7 ? "Senior" : "Open"
   );
 }
+
+//---------------------------------------------------------------------
+// This time no story, no theory. The examples below show you how to write function accum:
+
+function accum(s) {
+  const split = s.toLowerCase().split("");
+
+  let array = [];
+
+  split.forEach((item, idx) => {
+    const repeat = item.repeat(idx).toString();
+
+    const firstIdx = item.charAt(0).toUpperCase();
+
+    const result = firstIdx + repeat;
+
+    array.push(result);
+  });
+
+  return array.join("-");
+}
+
+function accum(s) {
+  return s
+    .split("")
+    .map((c, i) => c.toUpperCase() + c.toLowerCase().repeat(i))
+    .join("-");
+}
+
+
