@@ -469,4 +469,49 @@ function openOrSenior(data) {
 
 // ----------------------------------------------------------------------
 
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
 
+// function getMiddle(s) {
+//   let position;
+//   let length;
+
+//   console.log(s.length / 2);
+
+//   if (s.length % 2 == 1) {
+//     position = s.length / 2;
+
+//     length = 1;
+//   } else {
+//     position = s.length / 2 - 1;
+//     length = 2;
+//   }
+
+//   return s.substring(position, position + length);
+// }
+
+// ------------------------------------------------------------------------
+// Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+
+// function maskify(cc) {
+//   const array = cc.split("");
+//   const n = 4;
+//   let arr = [];
+
+//   const last4 = array.splice(-n);
+//   array.forEach((item) => {
+//     item = "#";
+//     arr.push(item);
+//   });
+
+//   return arr.join("") + last4.join("");
+// }
+
+// function maskify(cc) {
+//   return cc.slice(0, -4).replace(/./g, "#") + cc.slice(-4);
+// }
+
+// console.log(maskify("123546897745511816516"));
+
+// -------------------------------------------------------------------
