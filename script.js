@@ -524,9 +524,25 @@ function openOrSenior(data) {
 // For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
 
 // Note: for this kata y isn't considered a vowel
-function disemvowel(str) {
-  const vowel = str.replace(/[aeiou]/gi, "");
-  return vowel;
+// function disemvowel(str) {
+//   const vowel = str.replace(/[aeiou]/gi, "");
+//   return vowel;
+// }
+
+// -----------------------------------------------------------------------
+
+// Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer) is prime' (null in C#) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
+
+function divisors(integer) {
+  var divs = [];
+
+  for (var i = 2; i < integer; i++) {
+    if (integer % i === 0) {
+      divs.push(i);
+    }
+  }
+
+  return divs.length ? divs : integer + " is prime";
 }
 
-
+console.log(divisors(555));
