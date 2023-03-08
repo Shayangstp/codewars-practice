@@ -533,16 +533,62 @@ function openOrSenior(data) {
 
 // Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer) is prime' (null in C#) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
 
-function divisors(integer) {
-  var divs = [];
+// function divisors(integer) {
+//   var divs = [];
 
-  for (var i = 2; i < integer; i++) {
-    if (integer % i === 0) {
-      divs.push(i);
-    }
-  }
+//   for (var i = 2; i < integer; i++) {
+//     if (integer % i === 0) {
+//       divs.push(i);
+//     }
+//   }
 
-  return divs.length ? divs : integer + " is prime";
-}
+//   return divs.length ? divs : integer + " is prime";
+// }
 
-console.log(divisors(555));
+// console.log(divisors(555));
+// --------------------------------------------------
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+
+// Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-25)
+
+// function squareDigits(num) {
+//   let myFunc = (item) => Number(item);
+
+//   var intArr = Array.from(String(num), myFunc);
+
+//   let number = "";
+
+//   intArr.forEach((i) => {
+//     const result = Math.pow(i, 2);
+
+//     number += result;
+//   });
+
+//   return +number;
+// }
+
+// -----------------------------------------
+// In this example you have to validate if a user input string is alphanumeric. The given string is not nil/null/NULL/None, so you don't have to check that.
+
+// The string has the following conditions to be alphanumeric:
+
+// At least one character ("" is not valid)
+// Allowed characters are uppercase / lowercase latin letters and digits from 0 to 9
+// No whitespaces / underscore
+
+// function alphanumeric(string) {
+//   let str = string.toLowerCase();
+//   let regex = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+//   if (/\s/g.test(str) || str.match(regex) || str === "") {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+
+
+
+// -------------------------------------
