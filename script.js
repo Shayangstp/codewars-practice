@@ -589,6 +589,15 @@ function openOrSenior(data) {
 //   }
 // }
 
-
-
 // -------------------------------------
+// Your job here is to write a function (keepOrder in JS/CoffeeScript, keep_order in Ruby/Crystal/Python, keeporder in Julia), which takes a sorted array ary and a value val, and returns the lowest index where you could insert val to maintain the sorted-ness of the array. The input array will always be sorted in ascending order. It may contain duplicates.
+
+function order(arr, val) {
+  const valToArr = arr.push(val);
+  const sortArr = arr.sort((a, b) => a - b);
+  const indexOfVal = arr.indexOf(val);
+
+  console.log(indexOfVal);
+}
+
+order([1, 2, 3, 4, 7], 5);
